@@ -168,7 +168,6 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
-            "/Maps/gate.yml", // Contains positronic brain and LSE-1200c "Perforator"
             "/Maps/meta.yml", // Contains warden's rubber stamp
             "/Maps/reach.yml", // Contains handheld crew monitor
             "/Maps/Shuttles/ShuttleEvent/cruiser.yml", // Contains LSE-1200c "Perforator"
@@ -183,17 +182,15 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Goobstation/kettle.yml",
             "/Maps/_Goobstation/lambda.yml",
             "/Maps/_Goobstation/leonid.yml",
-            "/Maps/_Goobstation/submarine.yml",
             "/Maps/_Goobstation/Nonstations/wizden.yml", // Obviously
             "/Maps/_Lavaland/Lavaland/ruin_toyshop.yml", // I think we might want to glob these, idk
             "/Maps/_Goobstation/loop.yml",
-            "/Maps/_Goobstation/gate.yml",
             "/Maps/_Goobstation/Shuttles/consul.yml", // Contains HEINOUS amounts of centcomm contraband. Obviously.
             "/Maps/_Goobstation/Shuttles/retort_assault.yml", // ERT ships
             "/Maps/_Goobstation/Shuttles/retort_medical.yml",
             "/Maps/_Goobstation/Shuttles/retort_engineering.yml",
             "/Maps/_Goobstation/Shuttles/retort_janitorial.yml",
-            "/Maps/_Goobstation/Shuttles/retort_cburn.yml",
+            "/Maps/_Goobstation/Shuttles/retort_cburn.yml"
         };
 
         private static readonly string[] GameMaps =
@@ -201,43 +198,41 @@ namespace Content.IntegrationTests.Tests
             // Goobstation edit:
             // order this list alphabetically, mark dev maps
             // if upstreaming take ours here and edit manually.
-              "Amber",
-              "Atlas",
-              "Bagel",
-              "Barratry",
-              "Box",            // Not in pool
-              "CentComm",       // CentComm
-              "Chloris",
-              "Cluster",
-              "Cog",
-              "Core",           // Not in pool.
-              "Delta",
-              "Dev",            // Dev map
-              "dm01-entryway",  // Deathmatch
-              "Europa",         // Not in pool.
-              "Fland",
-              "FlandHighPop",
-              "Gate",           // Not in pool
-              "Kettle",
-              "Lambda",         // Not in pool
-              "Lavatest",       //Dev map
-              "Leonid",
-              "Loop",
-              "Marathon",
-              "Meta",
-              "MeteorArena",    // Deathmatch
-              "Oasis",
-              "OasisHighPop",
-              "Omega",
-              "Origin",
-              "OriginHighPop",  //Not in pool
-              "TestTeg",        //Dev map
-              "Train",          //Not in pool
-              "Packed",
-              "Reach",
-              "Saltern",
-              "Serpentcrest",
-              "Submarine"
+            "Amber",
+            "Atlas",
+            "Bagel",
+            "Barratry",
+            "Box",            // Not in pool
+            "CentComm",       // CentComm
+            "Chloris",
+            "Cluster",
+            "Cog",
+            "Core",           // Not in pool.
+            "Delta",
+            "Dev",            // Dev map
+            "dm01-entryway",  // Deathmatch
+            "Europa",         // Not in pool.
+            "Fland",
+            "FlandHighPop",
+            "Kettle",
+            "Lambda",         // Not in pool
+            "Lavatest",       // Dev map
+            "Leonid",
+            "Loop",
+            "Marathon",
+            "Meta",
+            "MeteorArena",    // Deathmatch
+            "Oasis",
+            "OasisHighPop",
+            "Omega",
+            "Origin",
+            "OriginHighPop",  // Not in pool
+            "Packed",
+            "Reach",
+            "Saltern",
+            "Serpentcrest",
+            "TestTeg",        // Dev map
+            "Train"           // Not in pool
             // Goob end
         };
         // Goobstation edit start, yeah i know, but this is easier and less load than loading protoman or something.
@@ -260,7 +255,6 @@ namespace Content.IntegrationTests.Tests
             //"Europa",         // Not in pool.
               "Fland",
               "FlandHighPop",
-            //"Gate",           // Not in pool
               "Kettle",
             //"Lambda",         // Not in pool
               "Lavatest",       //Dev map
@@ -280,7 +274,6 @@ namespace Content.IntegrationTests.Tests
               "Reach",
               "Saltern",
               "Serpentcrest",
-              "Submarine"
         };
         // Goobstation edit end
 

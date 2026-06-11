@@ -83,6 +83,24 @@
   - AudioVisualCommunication
 
 - type: technology
+  id: RadioMusicCommunications
+  name: research-technology-radio-music-communication
+  icon:
+    sprite: _Goobstation/Structures/Machines/StationRadio/vinylplayer.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - VinylPlayerCircuitboard
+  - TapeDeckCircuitboard
+  - StationRadioServerCircuitboard
+  - StationRadioRigCircuitboard
+  position: 2,6
+  technologyPrerequisites:
+  - ExtendedCommunications
+
+- type: technology
   id: HONKWeapons
   name: research-technology-honk-weapons
   icon:
@@ -99,3 +117,20 @@
   - HONKMech
 
 # Tier 3
+
+- type: technology
+  id: CloningTechnology
+  name: research-technology-cloning
+  icon:
+    sprite: Structures/Machines/cloning.rsi
+    state: pod_0
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - CloningPodMachineCircuitboardRecipe
+  - MedicalScannerMachineCircuitboardRecipe
+  - CloningConsoleComputerCircuitboardRecipe
+  technologyPrerequisites:
+  - HighEndSurgery
+  position: -3, 9

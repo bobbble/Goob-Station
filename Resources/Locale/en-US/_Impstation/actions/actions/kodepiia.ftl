@@ -8,7 +8,7 @@ kodepiia-consume-end-others = {$user} tears a chunk of flesh out of {$target}!
 
 kodepiia-consumed-onexamine-1 = [color=red]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} missing a chunk of flesh...[/color]
 kodepiia-consumed-onexamine-2 = [color=red]Bites mar {POSS-ADJ($target)} flesh.[/color]
-koedpiia-consumed-onexamine-3 = [color=red]{CAPITALIZE(POSS-ADJ($target))} insides are exposed by numerous bite marks.[/color]
+kodepiia-consumed-onexamine-3 = [color=red]{CAPITALIZE(POSS-ADJ($target))} insides are exposed by numerous bite marks.[/color]
 kodepiia-consumed-onexamine-4 = [color=red]{CAPITALIZE(POSS-ADJ($target))} body is barely strung together![/color]
 
 kodepiia-consume-fail-not-incapacitated = {$target} must be incapacitated!

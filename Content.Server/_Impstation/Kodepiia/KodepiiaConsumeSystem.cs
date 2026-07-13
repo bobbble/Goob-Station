@@ -58,7 +58,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
         EntityUid targetIdentity = Identity.Entity(target, EntityManager);
 
         if (!_ingestion.HasMouthAvailable(performer, target))
-            failMessage = Loc.GetString("kodepiia-consumed-fail-blocked");
+            failMessage = Loc.GetString("kodepiia-consume-fail-blocked");
         else if (!_whitelist.CheckBoth(target, performer.Comp.Blacklist, performer.Comp.Whitelist))
             failMessage = Loc.GetString("kodepiia-consume-fail-inedible", ("target", targetIdentity));
         else if (!_mobState.IsIncapacitated(target))
@@ -83,9 +83,19 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
             || !TryComp(args.Target, out PhysicsComponent? targetPhysics))
             return;
 
+        string popupSelf = Loc.GetString("kodepiia-consume-start-self",
+            ("user", Identity.Entity(ent, EntityManager)),
+            ("target", Identity.Entity(args.Target, EntityManager)));
+        string popupOthers = Loc.GetString("kodepiia-consume-start-others",
+            ("user", Identity.Entity(ent, EntityManager)),
+            ("target", Identity.Entity(args.Target, EntityManager)));
+
+        _popup.PopupEntity(popupSelf, ent, ent);
+        _popup.PopupEntity(popupOthers, ent, Filter.Pvs(ent).RemovePlayersByAttachedEntity(ent), true, PopupType.MediumCaution);
+
         float consumeTime = targetPhysics.Mass / performerPhysics.Mass * ent.Comp.BaseConsumeSpeed;
 
-        var doargs = new DoAfterArgs(EntityManager, ent, consumeTime, new KodepiiaConsumeDoAfterEvent(), ent, args.Target)
+        DoAfterArgs doAfterArgs = new DoAfterArgs(EntityManager, ent, consumeTime, new KodepiiaConsumeDoAfterEvent(), ent, args.Target)
         {
             DistanceThreshold = 1.5f,
             BreakOnDamage = true,
@@ -95,17 +105,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
             AttemptFrequency = AttemptFrequency.StartAndEnd
         };
 
-        string popupSelf = Loc.GetString("kodepiia-consume-start-self",
-            ("user", Identity.Entity(ent, EntityManager)),
-            ("target", Identity.Entity(args.Target, EntityManager)));
-        _popup.PopupEntity(popupSelf, ent, ent);
-
-        string popupOthers = Loc.GetString("kodepiia-consume-start-others",
-            ("user", Identity.Entity(ent, EntityManager)),
-            ("target", Identity.Entity(args.Target, EntityManager)));
-        _popup.PopupEntity(popupOthers, ent, Filter.Pvs(ent).RemovePlayersByAttachedEntity(ent), true, PopupType.MediumCaution);
-
-        _doAfter.TryStartDoAfter(doargs);
+        _doAfter.TryStartDoAfter(doAfterArgs);
         args.Handled = true;
     }
 

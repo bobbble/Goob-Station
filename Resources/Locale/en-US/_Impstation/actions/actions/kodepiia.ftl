@@ -11,6 +11,6 @@ kodepiia-consumed-onexamine-2 = [color=red]Bites mar {POSS-ADJ($target)} flesh.[
 koedpiia-consumed-onexamine-3 = [color=red]{CAPITALIZE(POSS-ADJ($target))} insides are exposed by numerous bite marks.[/color]
 kodepiia-consumed-onexamine-4 = [color=red]{CAPITALIZE(POSS-ADJ($target))} body is barely strung together![/color]
 
-kodepiia-consume-fail-incapacitated = {$target} must be incapacitated!
+kodepiia-consume-fail-not-incapacitated = {$target} must be incapacitated!
 kodepiia-consume-fail-inedible = {$target} is inedible!
 kodepiia-consume-fail-blocked = Your mouth is blocked, take off any masks or helmets to consume!

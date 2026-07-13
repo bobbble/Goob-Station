@@ -70,13 +70,18 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
         else if (!_mobState.IsIncapacitated(target))
             failMessage = Loc.GetString("kodepiia-consume-fail-not-incapacitated", ("target", targetIdentity));
 
+        Log.Error($"{failMessage}");
+
         return failMessage is null;
     }
 
     public void Consume(Entity<KodepiiaConsumeActionComponent> ent, ref KodepiiaConsumeEvent args)
     {
         if (!CanConsume(ent, args.Target, out string? failMessage))
+        {
             _popup.PopupClient(failMessage, ent, ent);
+            return;
+        }
 
         PlayConsumeSound(ent);
 

@@ -64,8 +64,6 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
         else if (!_mobState.IsIncapacitated(target))
             failMessage = Loc.GetString("kodepiia-consume-fail-not-incapacitated", ("target", targetIdentity));
 
-        Log.Error($"{failMessage}");
-
         return failMessage is null;
     }
 

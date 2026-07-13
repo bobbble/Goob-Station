@@ -21,7 +21,6 @@
     blacklist:
       components:
       - Silicon
-    PercentageConsumed: 0.25
   - type: Instrument
     allowPercussion: false
     program: 52

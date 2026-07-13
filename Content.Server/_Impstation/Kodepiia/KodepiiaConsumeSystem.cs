@@ -57,7 +57,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
 
         EntityUid targetIdentity = Identity.Entity(target, EntityManager);
 
-        if (!_ingestion.HasMouthAvailable(performer, target))
+        if (!_ingestion.HasMouthAvailable(performer, performer))
             failMessage = Loc.GetString("kodepiia-consume-fail-blocked");
         else if (!_whitelist.CheckBoth(target, performer.Comp.Blacklist, performer.Comp.Whitelist))
             failMessage = Loc.GetString("kodepiia-consume-fail-inedible", ("target", targetIdentity));

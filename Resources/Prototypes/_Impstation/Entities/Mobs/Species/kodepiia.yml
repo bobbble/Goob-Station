@@ -20,7 +20,7 @@
       - Bloodstream
     blacklist:
       components:
-      - SiliconLawBound
+      - Silicon
     percentageConsumed: 0.25
   - type: Instrument
     allowPercussion: false

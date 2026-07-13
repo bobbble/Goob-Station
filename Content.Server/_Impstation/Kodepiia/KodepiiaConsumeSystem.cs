@@ -42,13 +42,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
     [Dependency] private readonly RottingSystem _rotting = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
-    [Dependency] private readonly GibbingSystem _gibbing = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
 
-    /// <summary>
-    /// How far consumed the consumed must be before they gib
-    /// </summary>
-    private const float GibThreshold = 3.0f;
     public override void Initialize()
     {
         base.Initialize();

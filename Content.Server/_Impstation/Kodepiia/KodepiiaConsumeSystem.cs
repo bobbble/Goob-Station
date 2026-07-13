@@ -73,7 +73,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
     {
         if (!CanConsume(ent, args.Target, out string? failMessage))
         {
-            _popup.PopupClient(failMessage, ent, ent);
+            _popup.PopupEntity(failMessage, ent, ent);
             return;
         }
 

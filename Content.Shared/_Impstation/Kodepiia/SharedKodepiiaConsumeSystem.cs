@@ -32,7 +32,7 @@ public abstract partial class SharedKodepiiaConsumeSystem : EntitySystem
 
     private void OnExamine(Entity<KodepiiaConsumedComponent> ent, ref ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString($"kodepia-consumed-onexamine-{ent.Comp.Count}",
+        args.PushMarkup(Loc.GetString($"kodepiia-consumed-onexamine-{ent.Comp.Count}",
             ("target", Identity.Entity(ent, EntityManager))));
     }
 

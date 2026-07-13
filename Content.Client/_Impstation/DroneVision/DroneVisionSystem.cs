@@ -4,7 +4,7 @@ using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
-namespace Content.Client._Imp.DroneVision;
+namespace Content.Client._Impstation.DroneVision;
 
 public sealed partial class DroneVisionSystem : EntitySystem
 {

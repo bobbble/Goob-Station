@@ -36,10 +36,6 @@ public abstract partial class SharedKodepiiaConsumeSystem : EntitySystem
             ("target", Identity.Entity(ent, EntityManager))));
     }
 
-    public sealed partial class KodepiiaConsumeEvent : EntityTargetActionEvent;
-    [Serializable, NetSerializable]
-    public sealed partial class KodepiiaConsumeDoAfterEvent : SimpleDoAfterEvent;
-
     public void OnShutdown(Entity<KodepiiaConsumeActionComponent> ent, ref ComponentShutdown args)
     {
         _actionsSystem.RemoveAction(ent.Owner, ent.Comp.ConsumeAction);
@@ -49,4 +45,9 @@ public abstract partial class SharedKodepiiaConsumeSystem : EntitySystem
     {
         _actionsSystem.AddAction(ent, ref ent.Comp.ConsumeAction, ent.Comp.ConsumeActionId);
     }
+
+    public sealed partial class KodepiiaConsumeEvent : EntityTargetActionEvent;
+
+    [Serializable, NetSerializable]
+    public sealed partial class KodepiiaConsumeDoAfterEvent : SimpleDoAfterEvent;
 }

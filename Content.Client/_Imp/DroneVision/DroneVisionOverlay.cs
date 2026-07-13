@@ -2,7 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Stealth;
 using Content.Shared.Body.Components;
-using Content.Shared._Imp.Drone;
+using Content.Shared._Impstation.Drone;
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
